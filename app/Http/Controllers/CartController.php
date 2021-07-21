@@ -60,14 +60,14 @@ class CartController extends Controller
             ->delete();
     }
 
-    function remove(Request $req) {
-        $hardcart=Hardwarecart::find($req->input('id'));
-        if($hardcart)
-            $hardcart->delete();
-        $softcart=Softwarecart::find($req->input('id'));
-        if($softcart)
-            $softcart->delete();
-    }
+    // function remove(Request $req) {
+    //     $hardcart=Hardwarecart::find($req->input('id'));
+    //     if($hardcart)
+    //         $hardcart->delete();
+    //     $softcart=Softwarecart::find($req->input('id'));
+    //     if($softcart)
+    //         $softcart->delete();
+    // }
 
     function removefromcart(Request $req) {
         DB::table('softwarecarts')
