@@ -17,6 +17,12 @@ class NotifyController extends Controller
         return $notifications;
     }
     
+    function nb() {
+        $nb = DB::table('notifications')
+        ->count();
+        return $nb;
+    }
+
     function add(Request $req) {
         $notification=new Notification;
         $notification->notification=$req->input('notification');
@@ -34,6 +40,12 @@ class NotifyController extends Controller
             ->select('messages.id','messages.name','messages.email','messages.question')
             ->get();
         return $messages;
+    }
+
+    function nbmsg() {
+        $nb = DB::table('messages')
+        ->count();
+        return $nb;
     }
     
     function addmsg(Request $req) {

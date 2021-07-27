@@ -62,7 +62,9 @@ Route::get('listorder', [OrderController::class,'list']);
 Route::get('listmsg', [NotifyController::class,'listmsg']);
 Route::post('addmsg', [NotifyController::class,'addmsg']);
 Route::post('deletemsg', [NotifyController::class,'deletemsg']);
+Route::get('nbmsg', [NotifyController::class,'nbmsg']);
 
 Route::get('listnot', [NotifyController::class,'list']);
 Route::post('addnot', [NotifyController::class,'add']);
 Route::post('deletenot', [NotifyController::class,'delete']);
+Route::get('nb', [NotifyController::class,'nb']);
