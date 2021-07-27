@@ -7,6 +7,7 @@ use App\Http\Controllers\HardwareController;
 use App\Http\Controllers\SoftwareController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\NotifyController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -57,3 +58,11 @@ Route::post('remove',[CartController::class,'removefromcart']);
 
 Route::post('addorder', [OrderController::class,'addorder']);
 Route::get('listorder', [OrderController::class,'list']);
+
+Route::get('listmsg', [NotifyController::class,'listmsg']);
+Route::post('addmsg', [NotifyController::class,'addmsg']);
+Route::post('deletemsg', [NotifyController::class,'deletemsg']);
+
+Route::get('listnot', [NotifyController::class,'list']);
+Route::post('addnot', [NotifyController::class,'add']);
+Route::post('deletenot', [NotifyController::class,'delete']);

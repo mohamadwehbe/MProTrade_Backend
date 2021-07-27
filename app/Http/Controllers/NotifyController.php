@@ -18,11 +18,11 @@ class NotifyController extends Controller
     }
     
     function add(Request $req) {
-        $notifications=new Notifications;
-        $notifications->notification=$req->input('notification');
-        $notifications->customer_id = $req->input('customer_id');
-        $notifications->save();
-        return response()->json($notifications);
+        $notification=new Notification;
+        $notification->notification=$req->input('notification');
+        $notification->customer_id = $req->input('customer_id');
+        $notification->save();
+        return response()->json($notification);
     }
     
     function delete(Request $req) {
@@ -31,20 +31,18 @@ class NotifyController extends Controller
 
     function listmsg() {
         $messages = DB::table('messages')
-            ->select('messages.id','messages.customer_id','messages.name',
-                     'messages.email','messages.question')
+            ->select('messages.id','messages.name','messages.email','messages.question')
             ->get();
         return $messages;
     }
     
     function addmsg(Request $req) {
-        $messages=new Messages;
-        $messages->customer_id = $req->input('customer_id');
-        $messages->name = $req->input('name');
-        $messages->email = $req->input('email');
-        $messages->question = $req->input('question');
-        $messages->save();
-        return response()->json($messages);
+        $message=new Message;
+        $message->name = $req->input('name');
+        $message->email = $req->input('email');
+        $message->question = $req->input('question');
+        $message->save();
+        return response()->json($message);
     }
     
     function deletemsg(Request $req) {
